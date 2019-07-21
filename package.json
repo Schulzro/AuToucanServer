@@ -32,7 +32,8 @@
     "@adonisjs/vow": "^1.0.17",
     "is-iso-date": "0.0.1",
     "pg": "^7.11.0",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "url-parse": "^1.4.7"
   },
   "devDependencies": {},
   "autoload": {
