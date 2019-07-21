@@ -21,5 +21,6 @@ Route.get(DEFAULT_PATH + 'bookings', 'BookingController.all');
 Route.get(DEFAULT_PATH + 'bookings/:reference', 'BookingController.getByReference');
 Route.post(DEFAULT_PATH + 'bookings', 'BookingController.store')
     .validator('storeBooking');
-Route.delete(DEFAULT_PATH + 'bookings', 'BookingController.destroy')
+Route.delete(DEFAULT_PATH + 'bookings', 'BookingController.destroyByReference')
     .validator('deleteBooking');
+Route.delete(DEFAULT_PATH + 'bookings/:id', 'BookingController.destroyById');

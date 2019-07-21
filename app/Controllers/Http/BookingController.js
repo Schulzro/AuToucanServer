@@ -33,7 +33,16 @@ class BookingController {
             charset: 'alphabetic'
           });
 
-        const data = request.only(['name', 'email', 'booking_start_date', 'booking_end_date']);
+        const data = request.only([
+            'name', 
+            'email', 
+            'booking_start_date', 
+            'booking_end_date', 
+            'phone_number', 
+            'number_of_persons', 
+            'comments'
+        ]);
+
         data.reference = reference;
         const results = await this.isBookingFree(data.booking_start_date);
         if(results) {
@@ -66,10 +75,17 @@ class BookingController {
         //
     }
 
-    async destroy({ request, response }) {
+    async destroyByReference({ request, response }) {
         // delete a booking by reference string
         const reference = request.only(['reference']).reference;
         const booking = await Booking.findByOrFail('reference', reference);
+        await booking.delete();
+        return response.ok(booking);
+    }
+
+    async destroyById({params, response}) {
+        const id = params.id; 
+        const booking = await Booking.findByOrFail('id', id); 
         await booking.delete();
         return response.ok(booking);
     }
