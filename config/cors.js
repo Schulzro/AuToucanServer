@@ -18,7 +18,7 @@ module.exports = {
   */
   origin: [
     'http://localhost:8100', 
-    'https://schulzro.github.io/AuToucan/*'
+    'https://schulzro.github.io/AuToucan'
   ],
 
   /*
