@@ -16,7 +16,10 @@ module.exports = {
   | Function - Receives the current origin and should return one of the above values.
   |
   */
-  origin: ['http://localhost:8100'],
+  origin: [
+    'http://localhost:8100', 
+    'https://schulzro.github.io/AuToucan/*'
+  ],
 
   /*
   |--------------------------------------------------------------------------
