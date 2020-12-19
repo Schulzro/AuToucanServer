@@ -21,10 +21,13 @@ Factory.blueprint('App/Models/User', faker => {
 })
 
 Factory.blueprint('App/Models/Booking', faker => {
-    return {
-        name: faker.name(),
-        email: faker.email(),
-        booking_start_date: '2004-10-19 08:23:54+00',
-        booking_end_date: '2004-10-19 08:23:54+00'
-    }
+  return {
+    name: faker.name(),
+    email: faker.email(),
+    phone_number: faker.phone({ country: "fr" }),
+    number_of_persons: faker.integer({ min: 1, max: 12 }),
+    reference: faker.word({ length: 5 }),
+    booking_start_date: '2004-10-19 08:23:54+00',
+    booking_end_date: '2004-10-19 08:23:54+00'
+  }
 })
